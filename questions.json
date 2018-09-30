@@ -3,7 +3,7 @@
         {
             "text": "O projeto frontend foi criado utilizando o boilerplate de frontend oficial?",
             "categories": ["frontend"],
-            "weight": 1
+            "weight": 3
         },
         {
             "text": "O projeto frontend está utilizando corretamente os componentes do COI ou do MOIC?",
@@ -24,6 +24,181 @@
             "text": "O projeto está localizado no pool de máquinas certo?",
             "categories": ["infra"],
             "weight": 2
-        }
+        },
+        {
+            "text": "Você lembrou de fazer a liberação dos firewalls para as integrações?",
+            "categories": ["infra"],
+            "weight": 1
+        },
+        {
+            "text": "Estão utilizando um filesystem proprio?",
+            "categories": ["infra"],
+            "weight": 2
+        },
+        {
+            "text": "Os pipelines do backend estão funcionando?",
+            "categories": ["infra", "backend"],
+            "weight": 1
+        },
+        {
+            "text": "Os pipelines do frontend estão funcionando?",
+            "categories": ["infra", "frontend"],
+            "weight": 1
+        },
+        {
+            "text": "Se algo der errado, é possivel voltar um deploy facilmente pelo pipeline do backend?",
+            "categories": ["infra", "backend"],
+            "weight": 3
+        },
+        {
+            "text": "Se algo der errado, é possivel voltar um deploy facilmente pelo pipeline do frontend?",
+            "categories": ["infra", "frontend"],
+            "weight": 3
+        },
+        {
+            "text": "E o cache? Colocou cache nos pontos criticos?",
+            "categories": ["performance"],
+            "weight": 4
+        },
+        {
+            "text": "A expiração dos caches está configurada?",
+            "categories": ["performance"],
+            "weight": 1
+        },
+        {
+            "text": "Vocês definiram o timeout dos serviços?",
+            "categories": ["performance"],
+            "weight": 4
+        },        
+        {
+            "text": "Vocês tiraram acessos complexos do caminho critico da aplicação, utilizando processos assincronos e fila?",
+            "categories": ["performance"],
+            "weight": 1
+        },        
+        {
+            "text": "As consultas ao banco de dados tem indice?",
+            "categories": ["performance"],
+            "weight": 1
+        },        
+        {
+            "text": "Verificou se as conexões com o banco de dados estão sendo fechadas?",
+            "categories": ["performance"],
+            "weight": 1
+        },
+        {
+            "text": "Estão usando os usuários corretos da aplicação para conetar ao banco de dados?",
+            "categories": ["performance"],
+            "weight": 1
+        },
+        {
+            "text": "Estão logando direitinho os momentos importantes da aplicação? Entradas e saidas, operações?",
+            "categories": ["monitoramento", "debug"],
+            "weight": 2
+        },
+        {
+            "text": "Os logs tem algum identificador como CPF, Terminal, Email para que vocês possam buscar e encontrar o fluxo realizado?",
+            "categories": ["monitoramento", "debug"],
+            "weight": 2
+        },
+        {
+            "text": "Já temos os Dashboards no Kibana com os erros, sucessos, total de acessos e informações que passem uma visão geral da aplicação?",
+            "categories": ["monitoramento", "debug"],
+            "weight": 1
+        },
+        {
+            "text": "E os testes unitários, estão como uma boa cobertura?",
+            "categories": ["qualidade"],
+            "weight": 2
+        },
+        {
+            "text": "Os testes integrados, estão como uma boa cobertura?",
+            "categories": ["qualidade"],
+            "weight": 2
+        },
+        {
+            "text": "A cobertura de testes, está aparecendo no SONAR?",
+            "categories": ["qualidade"],
+            "weight": 1
+        },
+        {
+            "text": "Possui Loadbalancer e DNS configurado para o frontend?",
+            "categories": ["infra"],
+            "weight": 2
+        },
+        {
+            "text": "Possui Loadbalancer e DNS configurado para o backend?",
+            "categories": ["infra"],
+            "weight": 2
+        },
+        {
+            "text": "As rotas de proxy reverso já foram criadas?",
+            "categories": ["infra"],
+            "weight": 2
+        },
+        {
+            "text": "Vocês tem um desenho com a visão geral da aplicação? Ips, maquinas, integraçoes?",
+            "categories": ["documentacao"],
+            "weight": 2
+        },
+        {
+            "text": "Vocês tem um documento com as configurações de proxy reverso?",
+            "categories": ["documentacao"],
+            "weight": 1
+        },
+        {
+            "text": "Vocês tem um documento com as APIs, requests e responses esperados?",
+            "categories": ["documentacao"],
+            "weight": 1
+        },
+        {
+            "text": "O Mop já foi criado e alinhado com o time de operações?",
+            "categories": ["documentacao"],
+            "weight": 2
+        },
+        {
+            "text": "Realizaram testes de performance?",
+            "categories": ["performance"],
+            "weight": 1
+        },
+        {
+            "text": "A equipe de segurança está envolvida e realizou testes?",
+            "categories": ["seguranca"],
+            "weight": 1
+        },
+        {
+            "text": "A equipe de segurança está envolvida e realizou testes?",
+            "categories": ["seguranca"],
+            "weight": 2
+        },
+        {
+            "text": "Vocês lembraram da auditoria corporativa? Os logs estão sendo gravados corretamente?",
+            "categories": ["monitoramento", "debug"],
+            "weight": 2
+        },
+        {
+            "text": "A aplicação foi tagueada?",
+            "categories": ["monitoramento"],
+            "weight": 2
+        },
+        {
+            "text": "A aplicação tem data layer?",
+            "categories": ["monitoramento"],
+            "weight": 1
+        },
+        {
+            "text": "Vocês já pensaram na estratégia de rollout?",
+            "categories": ["deploy"],
+            "weight": 2
+        },
+        {
+            "text": "Já criaram as receitas de monitoramento no Butler?",
+            "categories": ["monitoramento"],
+            "weight": 2
+        },
+        {
+            "text": "Seu deploy tem impacto em algum outro peojeto",
+            "categories": ["impacto"],
+            "weight": 2
+        }      
     ]    
 }
