@@ -18,7 +18,7 @@ class ResumePage extends Component {
     }
 
     getSession() {
-        fetch(`http://localhost:8888/api/brave/${this.props.match.params.id}/session`)
+        fetch(`/api/brave/${this.props.match.params.id}/session`)
             .then(response => response.json())
             .then(session => {
                 console.log('entrou')

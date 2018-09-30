@@ -11,7 +11,7 @@ class HomePage extends Component {
     }
 
     start() {
-        fetch('http://localhost:8888/api/brave/start')
+        fetch('/api/brave/start')
             .then(response => response.json())
             .then(session => {
                 this.setState({ session });

@@ -19,7 +19,7 @@ class QuestionPage extends Component {
     }
 
     getSession() {
-        fetch(`http://localhost:8888/api/brave/${this.props.match.params.id}/session`)
+        fetch(`/api/brave/${this.props.match.params.id}/session`)
             .then(response => response.json())
             .then(session => {
                 console.log('entrou')
@@ -32,7 +32,7 @@ class QuestionPage extends Component {
         question.answer = answer;
         question.updatedAt = new Date();
 
-        fetch(`http://localhost:8888/api/brave/${this.props.match.params.id}/answer`, {
+        fetch(`/api/brave/${this.props.match.params.id}/answer`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
