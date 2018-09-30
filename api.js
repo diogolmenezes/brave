@@ -70,7 +70,8 @@ app.post('/api/brave/:id/answer', (req, res, next) => {
 
 // Servindo as rotas não conhecidas pelo REACT
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+    if(!res.headersSent)
+        res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 function getAverage(answers) {
@@ -79,8 +80,8 @@ function getAverage(answers) {
     let weightTotal = 0;
 
     answers.map(question => {
-        
-        if(question.answer) {
+
+        if (question.answer) {
             average += 10 * question.weight;
         }
 
