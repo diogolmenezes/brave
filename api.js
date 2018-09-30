@@ -7,8 +7,7 @@ const bodyParser = require('body-parser');
 // variavel global onde ficam todas as sessions iniciadas
 const sessions = [];
 
-
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, '/client/build')));
 
 // ligando o cors
 app.use(function(req, res, next) {
@@ -62,7 +61,7 @@ app.post('/api/brave/:id/answer', (req, res, next) => {
 
 // Servindo as rotas não conhecidas pelo REACT
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 
