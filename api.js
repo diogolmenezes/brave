@@ -65,6 +65,9 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-app.listen('8888', () => {
-    console.log('Brave API is ready to listen at port 8888');
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+    console.log('Brave API is ready to listen at port ' + port);
 });
