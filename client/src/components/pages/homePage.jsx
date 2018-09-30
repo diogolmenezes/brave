@@ -11,7 +11,7 @@ class HomePage extends Component {
     }
 
     start() {
-        fetch('/api/brave/start')
+        fetch(`/api/brave/start`)
             .then(response => response.json())
             .then(session => {
                 this.setState({ session });
@@ -29,8 +29,8 @@ class HomePage extends Component {
                 </div>
                 <div className="row">
                     <div className="col s12">
-                        <h2>Desde 2016 fazendo as perguntas que precisam ser feitas.</h2>
-                        <p>Tem certeza que você não está esquecendo de nada? Ahh duvido!</p>
+                        <h3>Tem certeza que você não está esquecendo de nada?</h3>
+                        <p>Não? Ahh duvido!</p>
                     </div>
                 </div>
                 <div className="row">

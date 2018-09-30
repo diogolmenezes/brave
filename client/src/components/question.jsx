@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class Question extends Component {
     constructor(props) {
@@ -9,13 +9,14 @@ class Question extends Component {
     componentWillMount() {
         let hasQuestion = this.props.session.questions.length > this.props.session.currentQuestion;
 
-        if(!hasQuestion)
+        if (!hasQuestion)
             this.props.history.push(`/${this.props.match.params.id}/resume`);
     }
 
     render() {
         return (
             <div className="container center-align">
+                <p>{this.props.session.currentQuestion + 1} de {this.props.session.questions.length + 1}</p>
                 <div className="row">
                     <div className="col s12">
                         <h4>{this.props.session.questions[this.props.session.currentQuestion].text}</h4>
@@ -28,7 +29,7 @@ class Question extends Component {
                             <i className="large material-icons">thumb_up</i>
                         </button>
                     </div>
-                    <div className="col s1"></div>
+                    <div className="col s2"></div>
                     <div className="col s1">
                         <button className="waves-effect waves-light btn-small no" onClick={this.props.answerNo}>
                             <i className="large material-icons ">thumb_down</i>

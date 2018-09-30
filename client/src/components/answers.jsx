@@ -10,7 +10,7 @@ class Answers extends Component {
         if(this.props.session.answers.length == 0)
             return null;
 
-        return (
+        return (            
             <table className="striped">
                 <thead>
                     <tr>
