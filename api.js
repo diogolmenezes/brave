@@ -7,10 +7,10 @@ const bodyParser = require('body-parser');
 // variavel global onde ficam todas as sessions iniciadas
 const sessions = [];
 
-app.use(express.static(path.join(__dirname, '/client/build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 // ligando o cors
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
@@ -22,7 +22,9 @@ app.get('/api/brave/start', (req, res, next) => {
 
     delete require.cache[require.resolve('./questions.json')];
 
-    const { questions } = require('./questions.json');
+    const {
+        questions
+    } = require('./questions.json');
 
     const session = {
         id: uuid(),
@@ -46,11 +48,11 @@ app.get('/api/brave/:id/session', (req, res, next) => {
 });
 
 app.post('/api/brave/:id/answer', (req, res, next) => {
-    const session = sessions.find(session => session.id == req.params.id); 
+    const session = sessions.find(session => session.id == req.params.id);
 
     const answer = req.body;
 
-    session.answers.push(answer);  
+    session.answers.push(answer);
 
     session.currentQuestion++;
 
