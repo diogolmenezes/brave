@@ -43,7 +43,12 @@ app.get('/api/brave/start', (req, res, next) => {
 
 app.get('/api/brave/:id/session', (req, res, next) => {
     const session = sessions.find(session => session.id == req.params.id);
+
+    // pega a media ponderada atualizada
+    session.average = getAverage(session.answers);
+
     res.status(200).send(session);
+
     next();
 });
 
@@ -56,6 +61,8 @@ app.post('/api/brave/:id/answer', (req, res, next) => {
 
     session.currentQuestion++;
 
+    session.average = getAverage(session.answers);
+
     res.status(200).send(session);
 
     next();
@@ -66,6 +73,22 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
+function getAverage(answers) {
+    // calcula a media ponderada
+    let average = 0;
+    let weightTotal = 0;
+
+    answers.map(question => {
+        
+        if(question.answer) {
+            average += 10 * question.weight;
+        }
+
+        weightTotal += question.weight;
+    });
+
+    return average / weightTotal;
+}
 
 const port = process.env.PORT || 5000;
 

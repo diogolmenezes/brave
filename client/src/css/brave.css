@@ -3,6 +3,10 @@ body {
     color: #FFF
 }
 
+a {
+    color: #FFF;
+}
+
 img {
     margin-top: 50px;
     max-height: 300px;
