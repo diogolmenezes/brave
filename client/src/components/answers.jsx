@@ -12,7 +12,7 @@ class Answers extends Component {
 
         return (
             <div>
-                <h6>Média: {this.props.session.average}</h6>
+                <h6>Média: {this.props.session.average.toFixed(2).replace(/[.,]00$/, "")}</h6>
                 <table className="striped">
                     <thead>
                         <tr>
