@@ -1,0 +1,12 @@
+img {
+    margin-top: 50px;
+}
+
+.btn-large, 
+.btn-small {
+    background: #e0550e !important;
+}
+
+.btn-small.no {
+    background: #ccc !important;
+}
